@@ -1,0 +1,218 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #222;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+.company-name {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+.nav-links a:hover {
+  background: #333;
+  border-radius: 4px;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #111;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  min-width: 160px;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li {
+  width: 100%;
+}
+.dropdown-menu a {
+  color: #fff;
+  padding: 10px 20px;
+  display: block;
+}
+
+.marquee-container {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 15px 0;
+}
+.marquee-container marquee {
+  background: transparent;
+  font-family: inherit;
+}
+.slideshow-section {
+  background: #232323;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+.slideshow {
+  position: relative;
+  width: 80vw;
+  max-width: 650px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.slide.active {
+  opacity: 1;
+}
+.marquee2-container {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 10px 0;
+  text-align: center;
+}
+.marquee2-container marquee {
+  background: transparent;
+  color: #000;
+}
+
+/* Explore Products Section */
+.explore-products {
+  background: #fff;
+  color: #000;
+  padding: 40px 0 20px 0;
+  text-align: center;
+}
+.products-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.product-card {
+  border: 2px solid #000;
+  padding: 16px;
+  background: #fff;
+  width: 180px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.product-card img {
+  width: 80%;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+.product-card p {
+  font-weight: 500;
+  font-size: 1.15em;
+}
+
+/* Promotion Banner */
+.promotion {
+  background: #fff;
+  color: #111;
+  text-align: center;
+  padding: 35px 0;
+}
+.promotion h2 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+.promotion img {
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 2px 4px 24px rgba(0,0,0,0.18);
+  margin-bottom: 13px;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1em;
+}
+.footer-content p {
+  margin: 8px 0;
+}
+
+@media (max-width: 900px) {
+  .products-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .slideshow {
+    height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+  }
+  .products-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-card {
+    width: 90vw;
+    margin-bottom: 20px;
+  }
+}
